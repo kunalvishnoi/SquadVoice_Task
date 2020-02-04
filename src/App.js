@@ -465,11 +465,7 @@ class App extends Component {
           <div className="row mt-5">
             {data[this.state.currentState].map((data, index) => {
               return (
-                <div
-                  key={index}
-                  className="col-md-3 col-6 mt-3"
-                  onClick={this.handleOpenModal.bind(this, data.name)}
-                >
+                <div key={index} className="col-md-3 col-6 mt-3">
                   <div className="ratecard">
                     <div className="topbottom-card">{data.name}</div>
                     <div className="middle-card">
@@ -489,7 +485,10 @@ class App extends Component {
                     <div className="topbottom-card mt-4">
                       {data.finalprice} / month
                     </div>
-                    <button className="btn mt-2 trial-btn">
+                    <button
+                      onClick={this.handleOpenModal.bind(this, data.name)}
+                      className="btn mt-2 trial-btn"
+                    >
                       Start Your Trial
                     </button>
                   </div>
